@@ -1,0 +1,18 @@
+using System;
+
+    class NumbersNotDividedBy3and7
+    {
+        static void Main()
+        {
+            int n = int.Parse(Console.ReadLine());
+            int counter = 0;
+            while (counter < n)
+            {
+                counter++;
+                if (!(counter % 3 == 0 || counter % 7 == 0))
+                {
+                    Console.Write(" " + counter);
+                }
+            }
+        }
+    }
