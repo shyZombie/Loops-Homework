@@ -1,0 +1,17 @@
+using System;
+
+    class NumbersFrom1toN
+    {
+        static void Main()
+        {
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
+            int counter = 1;
+            while (counter <= n)
+            {
+                Console.Write(" " + counter);
+                counter++;
+            }
+        }
+    }
+
