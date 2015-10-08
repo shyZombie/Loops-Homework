@@ -1,0 +1,39 @@
+using System;
+using System.Numerics;
+
+    class Program
+    {
+        static void Main()
+        {
+            Console.Write("Enter N value: ");
+            int n = int.Parse(Console.ReadLine());
+            int k = 0;
+            bool isKSmaller = true;
+
+            do
+            {
+                Console.Write("Enter K value (must be smaller than N): ");
+                isKSmaller = int.TryParse(Console.ReadLine(), out k);
+            }
+            while (k > n);
+
+            BigInteger factorialN = 1;
+            BigInteger factorialK = 1;
+            int subtract = n - k;
+            BigInteger factorialSubtract = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                factorialN *= i;
+                if (i <= k)
+                {
+                    factorialK *= i;
+                }
+            }
+            for (int j = 1; j <= subtract; j++)
+            {
+                factorialSubtract *= j;
+            }
+            Console.WriteLine("{0}!/({1}!*({0}-{1})!)={2}", n, k, factorialN / (factorialK * factorialSubtract));
+        }
+    }
+
